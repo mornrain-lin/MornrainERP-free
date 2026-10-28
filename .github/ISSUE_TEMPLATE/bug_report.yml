@@ -1,0 +1,78 @@
+name: bug_report
+description: 报告一个缺陷（功能异常 / 报错 / 数据不正确）
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        提交前请先搜索已有 Issue 避免重复。
+        **安全漏洞请不要在这里提交**，请按 [SECURITY.md](../../SECURITY.md) 私下报告。
+
+  - type: input
+    id: version
+    attributes:
+      label: 版本 / 提交号
+      description: 例如 v1.0.0 或 commit 8a5b15e
+      placeholder: v1.0.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: module
+    attributes:
+      label: 所属模块
+      options:
+        - 经营（概览 / 订单 / 导入）
+        - 零售管理
+        - 销售管理
+        - 采购管理
+        - 仓库管理
+        - 财务管理
+        - 报表查询
+        - 系统管理（账号 / 权限 / 参数）
+        - 流程中心
+        - WordPress 插件
+        - 安装与部署
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 请写清楚操作顺序，能稳定复现最好
+      placeholder: |
+        1. 进入「仓库管理 → 库存总览」
+        2. 点击「调拨」
+        3. 提交后发现……
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果
+      description: 附截图或错误堆栈更有助于定位
+    validations:
+      required: true
+
+  - type: textarea
+    id: env
+    attributes:
+      label: 运行环境
+      placeholder: |
+        - OS: Windows 11 / Ubuntu 22.04
+        - PHP: 8.3.x
+        - 数据库: SQLite / MySQL 8.0
+        - 浏览器: Chrome 131
+    validations:
+      required: true

@@ -1,0 +1,45 @@
+/* 港湾ERP 插件 · 前台样式 */
+
+.gw-erp-workbench {
+	background: #fff;
+	border: 1px solid #e5e7eb;
+	border-radius: 12px;
+	padding: 20px;
+	margin: 16px 0;
+}
+.gw-wb-title { margin: 0 0 14px; font-size: 18px; }
+.gw-wb-kpis {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+	gap: 12px;
+	margin-bottom: 14px;
+}
+.gw-wb-kpi {
+	background: linear-gradient(180deg, #f8fafc, #ffffff);
+	border: 1px solid #eef0f3;
+	border-radius: 10px;
+	padding: 12px;
+}
+.gw-wb-kpi span { display: block; font-size: 12px; color: #6b7280; margin-bottom: 6px; }
+.gw-wb-kpi strong { font-size: 18px; }
+.gw-wb-actions { margin: 10px 0 16px; }
+
+.gw-erp-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.gw-erp-table th, .gw-erp-table td { padding: 8px 10px; border-bottom: 1px solid #eef0f3; text-align: left; }
+.gw-erp-table th { background: #f8fafc; }
+
+.gw-pos { color: #d9453d; font-weight: 600; }
+.gw-neg { color: #12a06a; font-weight: 600; }
+
+.gw-erp-modules-meta { font-size: 12px; color: #6b7280; }
+.gw-mod-group { margin: 14px 0; }
+.gw-mod-group h3 { font-size: 15px; margin: 0 0 8px; }
+.gw-mod-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; }
+.gw-mod-item {
+	display: flex; justify-content: space-between; align-items: center;
+	border: 1px solid #e5e7eb; border-radius: 8px; padding: 8px 10px; background: #fff;
+}
+.gw-mod-badge { font-size: 12px; padding: 2px 8px; border-radius: 999px; }
+.gw-mod-ready .gw-mod-badge { background: #fdecec; color: #b42318; }
+.gw-mod-planned .gw-mod-badge { background: #e7f6ef; color: #0f7a52; }
+.gw-erp-locked { padding: 16px; border: 1px dashed #cbd5e1; border-radius: 10px; }

@@ -1,0 +1,388 @@
+{
+    "generated_at": "2026-10-28 08:00:10",
+    "version": "v1.x",
+    "repo": "mornrain-lin\/gangwanERP-free",
+    "edition": "free",
+    "stats": {
+        "total": 41,
+        "ready": 41,
+        "planned": 0
+    },
+    "permissions": 15,
+    "tables": 41,
+    "groups": [
+        {
+            "name": "经营",
+            "items": [
+                {
+                    "name": "概览",
+                    "status": "ready",
+                    "permission": "",
+                    "route": "dashboard",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "产品路线图",
+                    "status": "ready",
+                    "permission": "",
+                    "route": "roadmap",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "订单管理",
+                    "status": "ready",
+                    "permission": "",
+                    "route": "orders.index",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "订单导入",
+                    "status": "ready",
+                    "permission": "",
+                    "route": "orders.import.form",
+                    "desc": "",
+                    "meta": ""
+                }
+            ]
+        },
+        {
+            "name": "零售管理",
+            "items": [
+                {
+                    "name": "门店开单",
+                    "status": "ready",
+                    "permission": "retail.view",
+                    "route": "retail.pos",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "零售单",
+                    "status": "ready",
+                    "permission": "retail.view",
+                    "route": "retail.sales",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "零售退货",
+                    "status": "ready",
+                    "permission": "retail.view",
+                    "route": "retail.returns",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "会员管理",
+                    "status": "ready",
+                    "permission": "retail.view",
+                    "route": "retail.members",
+                    "desc": "",
+                    "meta": ""
+                }
+            ]
+        },
+        {
+            "name": "销售管理",
+            "items": [
+                {
+                    "name": "销售订单",
+                    "status": "ready",
+                    "permission": "sales.view",
+                    "route": "sales.orders",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "客户管理",
+                    "status": "ready",
+                    "permission": "sales.view",
+                    "route": "sales.customers",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "报价单",
+                    "status": "ready",
+                    "permission": "sales.view",
+                    "route": "sales.quotes",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "销售退货",
+                    "status": "ready",
+                    "permission": "sales.view",
+                    "route": "sales.returns",
+                    "desc": "",
+                    "meta": ""
+                }
+            ]
+        },
+        {
+            "name": "采购管理",
+            "items": [
+                {
+                    "name": "采购管理",
+                    "status": "ready",
+                    "permission": "purchases.view",
+                    "route": "purchases.index",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "请购申请",
+                    "status": "ready",
+                    "permission": "purchases.view",
+                    "route": "requisitions.index",
+                    "desc": "",
+                    "meta": ""
+                }
+            ]
+        },
+        {
+            "name": "仓库管理",
+            "items": [
+                {
+                    "name": "库存总览",
+                    "status": "ready",
+                    "permission": "",
+                    "route": "inventory.index",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "仓库与分仓",
+                    "status": "ready",
+                    "permission": "inventory.view",
+                    "route": "warehouses.index",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "仓库调拨",
+                    "status": "ready",
+                    "permission": "inventory.view",
+                    "route": "warehouses.transfers.index",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "组装拆卸",
+                    "status": "ready",
+                    "permission": "inventory.view",
+                    "route": "warehouses.assemblies.index",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "库存盘点",
+                    "status": "ready",
+                    "permission": "inventory.view",
+                    "route": "warehouses.stocktake.form",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "其他出入库",
+                    "status": "ready",
+                    "permission": "inventory.view",
+                    "route": "warehouses.other.form",
+                    "desc": "",
+                    "meta": ""
+                }
+            ]
+        },
+        {
+            "name": "财务管理",
+            "items": [
+                {
+                    "name": "财务总览",
+                    "status": "ready",
+                    "permission": "finance.view",
+                    "route": "finance.index",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "资金账户",
+                    "status": "ready",
+                    "permission": "finance.view",
+                    "route": "finance.accounts",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "收支流水",
+                    "status": "ready",
+                    "permission": "finance.view",
+                    "route": "finance.flows",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "预付款管理",
+                    "status": "ready",
+                    "permission": "finance.view",
+                    "route": "finance.prepayments",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "对账中心",
+                    "status": "ready",
+                    "permission": "finance.view",
+                    "route": "finance.reconciliations",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "账务台账",
+                    "status": "ready",
+                    "permission": "finance.view",
+                    "route": "finance.ledger",
+                    "desc": "",
+                    "meta": ""
+                }
+            ]
+        },
+        {
+            "name": "报表查询",
+            "items": [
+                {
+                    "name": "利润报表",
+                    "status": "ready",
+                    "permission": "",
+                    "route": "reports.profit",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "财务报表",
+                    "status": "ready",
+                    "permission": "reports.finance",
+                    "route": "reports.finance",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "经营报表",
+                    "status": "ready",
+                    "permission": "reports.finance",
+                    "route": "reports.business",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "综合查询",
+                    "status": "ready",
+                    "permission": "",
+                    "route": "query.index",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "报表设计",
+                    "status": "ready",
+                    "permission": "report.design",
+                    "route": "report-design.index",
+                    "desc": "",
+                    "meta": ""
+                }
+            ]
+        },
+        {
+            "name": "系统管理",
+            "items": [
+                {
+                    "name": "平台对接",
+                    "status": "ready",
+                    "permission": "sync.manage",
+                    "route": "sync.index",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "系统状态",
+                    "status": "ready",
+                    "permission": "system.status",
+                    "route": "system.status",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "账号管理",
+                    "status": "ready",
+                    "permission": "users.manage",
+                    "route": "users.index",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "操作审计",
+                    "status": "ready",
+                    "permission": "audit.view",
+                    "route": "audit.index",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "角色权限",
+                    "status": "ready",
+                    "permission": "",
+                    "route": "roles.index",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "系统参数",
+                    "status": "ready",
+                    "permission": "",
+                    "route": "settings.index",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "菜单管理",
+                    "status": "ready",
+                    "permission": "",
+                    "route": "menus.index",
+                    "desc": "",
+                    "meta": ""
+                }
+            ]
+        },
+        {
+            "name": "流程中心",
+            "items": [
+                {
+                    "name": "流程目录",
+                    "status": "ready",
+                    "permission": "",
+                    "route": "workflows.index",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "我的待办",
+                    "status": "ready",
+                    "permission": "",
+                    "route": "workflows.todo",
+                    "desc": "",
+                    "meta": ""
+                },
+                {
+                    "name": "我发起的",
+                    "status": "ready",
+                    "permission": "",
+                    "route": "workflows.my",
+                    "desc": "",
+                    "meta": ""
+                }
+            ]
+        }
+    ]
+}

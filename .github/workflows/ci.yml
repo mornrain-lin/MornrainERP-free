@@ -1,0 +1,89 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  syntax:
+    name: PHP syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP 8.3
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, intl, zip, curl, fileinfo, pdo_sqlite
+          coverage: none
+
+      - name: Lint all PHP files
+        run: |
+          set -e
+          find app config routes database public -name '*.php' -print0 \
+            | xargs -0 -n1 -P4 php -l > lint.log 2>&1 || true
+          if grep -qE "Parse error|Errors parsing" lint.log; then
+            echo "::error::PHP syntax error detected"
+            grep -E "Parse error|Errors parsing" lint.log || true
+            exit 1
+          fi
+          echo "syntax OK: $(find app config routes database public -name '*.php' | wc -l) files"
+
+  smoke:
+    name: Install / migrate / snapshot
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP 8.3
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, intl, zip, curl, fileinfo, pdo_sqlite
+          coverage: none
+
+      - name: Cache Composer packages
+        uses: actions/cache@v4
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php8.3-${{ hashFiles('composer.lock') }}
+
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: Prepare env + SQLite
+        run: |
+          cp .env.example .env
+          php artisan key:generate --force
+          touch database/database.sqlite
+
+      - name: Migrate and seed
+        run: |
+          php artisan migrate --force --seed
+          php artisan route:list > routes.txt
+          echo "routes: $(wc -l < routes.txt)"
+
+      - name: Module snapshot must be up to date
+        run: |
+          php artisan modules:export-json
+          git diff --exit-code -- docs/modules.json \
+            && echo "docs/modules.json is up to date"
+
+      - name: No external CDN in views and assets
+        run: |
+          set -e
+          HITS=$(grep -RInE "https?://" resources/views public/css public/js 2>/dev/null \
+            | grep -vE "gangwan123\.com|github\.com|schema\.org|w3\.org|example\.com" || true)
+          if [ -n "$HITS" ]; then
+            echo "::warning::External references found (project policy: zero CDN):"
+            echo "$HITS"
+          else
+            echo "no external CDN reference"
+          fi

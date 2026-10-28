@@ -1,0 +1,81 @@
+/* 港湾ERP 插件 · 后台样式（零外部依赖，青绿光感） */
+
+.gw-erp-wrap { max-width: 1400px; }
+.gw-erp-title { display: flex; align-items: baseline; gap: 10px; }
+.gw-erp-ver { font-size: 12px; font-weight: 400; color: #6b7280; }
+.gw-erp-tabs { margin: 8px 0 18px; }
+
+.gw-erp-card {
+	background: #fff;
+	border: 1px solid #e5e7eb;
+	border-radius: 10px;
+	padding: 16px 18px;
+	margin: 0 0 16px;
+	box-shadow: 0 1px 2px rgba(16, 24, 40, .04);
+}
+.gw-erp-card h2 { margin: 0 0 12px; font-size: 15px; }
+.gw-erp-card h3 { margin: 18px 0 8px; font-size: 14px; }
+
+.gw-erp-kpis {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+	gap: 12px;
+	margin: 0 0 16px;
+}
+.gw-kpi {
+	background: #fff;
+	border: 1px solid #e5e7eb;
+	border-radius: 10px;
+	padding: 12px 14px;
+}
+.gw-kpi-label { display: block; font-size: 12px; color: #6b7280; margin-bottom: 6px; }
+.gw-kpi strong { font-size: 20px; font-weight: 600; color: #111827; }
+
+.gw-erp-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.gw-erp-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: start; }
+@media (max-width: 1100px) {
+	.gw-erp-grid-2, .gw-erp-grid-3 { grid-template-columns: 1fr; }
+}
+
+.gw-erp-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.gw-erp-table th, .gw-erp-table td { padding: 8px 10px; border-bottom: 1px solid #eef0f3; text-align: left; }
+.gw-erp-table th { background: #f8fafc; color: #475569; font-weight: 600; }
+.gw-erp-table-compact th, .gw-erp-table-compact td { padding: 6px 8px; }
+.gw-erp-table tbody tr:hover { background: #f9fafb; }
+
+/* 中国习惯：盈利/涨=红，亏损/跌=绿 */
+.gw-pos { color: #d9453d; font-weight: 600; }
+.gw-neg { color: #12a06a; font-weight: 600; }
+.gw-danger { color: #b42318; }
+
+.gw-badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; line-height: 1.6; }
+.gw-badge-ready { background: #fdecec; color: #b42318; }
+.gw-badge-planned { background: #e7f6ef; color: #0f7a52; }
+
+.gw-alerts { margin: 0; padding-left: 18px; }
+.gw-alert { margin-bottom: 4px; }
+.gw-alert-warn a { color: #b42318; }
+.gw-alert-info a { color: #0f7a52; }
+
+.gw-inline-form { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 10px; }
+.gw-filters { margin: 0 0 10px; font-size: 13px; }
+.gw-right { float: right; }
+
+.gw-ul { margin: 0; padding-left: 18px; }
+.gw-ul li { margin-bottom: 4px; }
+
+.gw-commits { margin: 0; padding-left: 18px; font-size: 13px; }
+.gw-commits li { margin-bottom: 6px; }
+
+.gw-erp-modules-head h2 { overflow: hidden; }
+
+/* 工具元字段面板（ERP工具 CPT） */
+.gw-tool-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.gw-tool-meta-field { margin: 0; }
+.gw-tool-meta-field.full { grid-column: 1 / -1; }
+.gw-tool-meta-field label { display: block; margin-bottom: 4px; }
+.gw-tool-meta-field input[type="text"],
+.gw-tool-meta-field input[type="url"],
+.gw-tool-meta-field select,
+.gw-tool-meta-field textarea { width: 100%; }
+.gw-tool-meta-field .description { display: block; color: #6b7280; font-size: 12px; margin-top: 4px; }

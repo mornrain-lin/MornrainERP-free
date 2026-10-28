@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 使用问题与业务咨询
+    url: https://gangwan123.com/contact/
+    about: 安装部署、使用疑问、专业版与企业版报价请走官网联系页。
+  - name: 常见问题 FAQ
+    url: https://gangwan123.com/faq/
+    about: 关于免费版授权、数据安全、版本差异的常见问题。
+  - name: 安全漏洞报告
+    url: https://github.com/mornrain-lin/gangwanERP-free/security/advisories/new
+    about: 请勿开公开 Issue，通过私密渠道报告。
