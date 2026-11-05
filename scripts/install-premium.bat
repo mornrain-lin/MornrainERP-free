@@ -1,0 +1,23 @@
+@echo off
+rem 收费私有包安装脚本（付费用户专用）
+rem 用法: set GITHUB_TOKEN=xxxx && scripts\install-premium.bat
+setlocal
+if "%GITHUB_TOKEN%"=="" (
+  echo 错误：请先设置 GITHUB_TOKEN（对 mornrain-lin/erp-premium 私有仓库有 read 权限）
+  echo 示例: set GITHUB_TOKEN=ghp_xxx && scripts\install-premium.bat
+  exit /b 1
+)
+
+echo 配置私有仓库源
+composer config repositories.erp-premium vcs https://github.com/mornrain-lin/erp-premium.git
+composer config github-oauth.github.com %GITHUB_TOKEN%
+
+echo 拉取并安装 mornrain/erp-premium
+composer require "mornrain/erp-premium:*"
+
+echo 执行迁移
+php artisan migrate --force
+php artisan config:clear
+
+echo 完成。请到「系统 - 激活码管理」粘贴激活码解锁收费模块。
+echo 提示：GITHUB_TOKEN 仅用于本次 composer 鉴权，不会写入仓库。

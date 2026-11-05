@@ -1,0 +1,39 @@
+*.log
+.DS_Store
+.env
+.env.backup
+.env.production
+.phpactor.json
+.phpunit.result.cache
+/.codex
+/.cursor/
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
+/auth.json
+/node_modules
+/public/build
+/public/fonts-manifest.dev.json
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/vendor
+_ide_helper.php
+Homestead.json
+Homestead.yaml
+Thumbs.db
+
+# Windows 未展开的环境变量（如 %SystemDrive%）被某些程序当成相对路径误建的目录，禁止入库
+/public/%SystemDrive%/
+/public/_junk_*/
+
+# 本地环境备份（含明文凭据，禁止入库）
+.env.bak*
+.env.*.bak
+/.workbuddy
+
+# 收费版私有包：不进入公开仓库，付费用户按 PREMIUM.md 从私有仓库安装
+/packages/
