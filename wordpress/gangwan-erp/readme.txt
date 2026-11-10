@@ -61,7 +61,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 2. 后台启用「晨雨ERP」。
 3. 若站点使用 gangwan-erp 主题，请把主题 `functions.php` 里对 `inc/cpt.php` 与 `inc/erp.php` 的 require 改为：
    `if ( ! defined( 'GW_ERP_VERSION' ) ) { require_once ...; }`
-4. 进入「晨雨ERP → 设置」配置 GitHub 仓库（默认 mornrain-lin/MornrainERPfree）与低库存阈值；若改指向私有仓库，请填写有读权限的 Token。
+4. 进入「晨雨ERP → 设置」配置 GitHub 仓库（默认 mornrain-lin/MornrainERP-free）与低库存阈值；若改指向私有仓库，请填写有读权限的 Token。
 
 == Frequently Asked Questions ==
 
@@ -75,7 +75,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 插件自带完整的 tool CPT 与 scenario 分类法，不依赖主题；但前台展示模板（archive-tool.php 等）由主题提供，需要自行补模板或保留主题。
 
 = 模块中心读取私有仓库时提示失败怎么办？ =
-默认读取公开的免费版仓库 mornrain-lin/MornrainERPfree，匿名即可访问（60 次/小时）。若你改指向私有仓库，请在「设置 → GitHub 连接」填写对该仓库有读权限的 Token，或在 wp-config.php 定义 GW_ERP_GITHUB_TOKEN。
+默认读取公开的免费版仓库 mornrain-lin/MornrainERP-free，匿名即可访问（60 次/小时）。若你改指向私有仓库，请在「设置 → GitHub 连接」填写对该仓库有读权限的 Token，或在 wp-config.php 定义 GW_ERP_GITHUB_TOKEN。
 
 == Changelog ==
 

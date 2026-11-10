@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name: 晨雨ERP — 统一企业经营管理插件
- * Plugin URI:  https://github.com/mornrain-lin/MornrainERPfree
+ * Plugin URI:  https://github.com/mornrain-lin/MornrainERP-free
  * Description: 晨雨ERP（MornrainERP）WordPress 统一插件：ERP工具（tool 文章类型 + 使用场景分类）、商品库存、订单、采购、客户供应商、财务资金、经营报表、前台卖家工具台，并内置 GitHub 模块中心（在后台直接查看 GitHub 仓库的模块清单与最近提交）。纯 PHP + $wpdb，零外部依赖。
  * Version:     1.0.0
  * Requires at least: 5.9
  * Requires PHP: 7.4
  * Author:      MornrainERP
- * Author URI:  https://github.com/mornrain-lin/MornrainERPfree
+ * Author URI:  https://github.com/mornrain-lin/MornrainERP-free
  * License:     GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: gangwan-erp
