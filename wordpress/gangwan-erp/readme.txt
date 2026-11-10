@@ -8,7 +8,7 @@ Stable tag: 1.0.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-晨雨ERP（MornrainERP）WordPress 统一插件：ERP工具（tool 文章类型 + 使用场景分类）、商品库存、订单、采购、客户供应商、财务资金、经营报表、前台卖家工具台，并内置 GitHub 模块中心。
+晨雨ERP WordPress 统一插件：ERP工具（tool 文章类型 + 使用场景分类）、商品库存、订单、采购、客户供应商、财务资金、经营报表、前台卖家工具台，并内置 GitHub 模块中心。官网：https://erp.mornrain.com。
 
 == Description ==
 

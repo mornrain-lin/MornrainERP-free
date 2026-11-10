@@ -22,7 +22,7 @@
     </div>
 
     <ol style="line-height:1.9;color:#444;">
-        <li>前往官网 / 联系商务获取收费版授权与私有仓库访问权限；</li>
+        <li>前往 <a href="https://erp.mornrain.com" target="_blank" rel="noopener">晨雨ERP 官网</a> / 联系商务获取收费版授权与私有仓库访问权限；</li>
         <li>按 <code>PREMIUM.md</code> 配置私有仓库令牌并执行安装脚本；</li>
         <li>在「系统 → 激活码管理」粘贴激活码，对应模块即自动解锁。</li>
     </ol>
