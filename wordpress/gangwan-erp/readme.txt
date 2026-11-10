@@ -1,8 +1,8 @@
 === 晨雨ERP — 统一企业经营管理插件 ===
 Contributors: mornrain-lin
-Tags: erp, inventory, order, purchase, finance, crm, 进销存
+Tags: erp, inventory, order, purchase, finance
 Requires at least: 5.9
-Tested up to: 6.8
+Tested up to: 7.1
 Requires PHP: 7.4
 Stable tag: 1.0.0
 License: GPL-2.0-or-later
@@ -39,7 +39,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 * 激活时自动接管主题遗留 cerp_* 数据（仅一次，旧表保留）
 * 颜色遵循中国习惯：盈利/涨=红，亏损/跌=绿
 
-== 免费与付费 ==
+= 免费与付费 =
 
 本插件本身**完全免费**（GPL-2.0-or-later），不含任何付费墙；其全部业务模块
 （商品 / 库存 / 订单 / 采购 / 往来 / 财务 / 报表 / GitHub 模块中心）均为免费功能。
@@ -61,7 +61,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 2. 后台启用「晨雨ERP」。
 3. 若站点使用 gangwan-erp 主题，请把主题 `functions.php` 里对 `inc/cpt.php` 与 `inc/erp.php` 的 require 改为：
    `if ( ! defined( 'GW_ERP_VERSION' ) ) { require_once ...; }`
-4. 进入「晨雨ERP → 设置」配置 GitHub 仓库（默认 mornrain-lin/MornrainERP）与低库存阈值。
+4. 进入「晨雨ERP → 设置」配置 GitHub 仓库（默认 mornrain-lin/MornrainERP-free）与低库存阈值；若目标仓库为私有，请填写有读权限的 Token。
 
 == Frequently Asked Questions ==
 
@@ -74,6 +74,9 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 = 主题停用后还能用吗？ =
 插件自带完整的 tool CPT 与 scenario 分类法，不依赖主题；但前台展示模板（archive-tool.php 等）由主题提供，需要自行补模板或保留主题。
 
+= 模块中心读取私有仓库时提示失败怎么办？ =
+默认读取免费版仓库 mornrain-lin/MornrainERP-free。若该仓库设为私有，请在「设置 → GitHub 连接」填写对该仓库有读权限的 Token，或在 wp-config.php 定义 GW_ERP_GITHUB_TOKEN；匿名访问（60 次/小时）仅对公开仓库有效。
+
 == Changelog ==
 
 = 1.0.0 =
@@ -82,3 +85,9 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 * 新增 GitHub 模块中心（API 只读 + 12 小时缓存 + 可选 Token）
 * 新增 CSV 导出（订单 / 商品 / 库存 / 流水 / 采购）
 * 兼容层保留主题旧函数名，主题模板零改动
+
+== Upgrade Notice ==
+
+= 1.0.0 =
+* 首次安装无额外操作；从主题内嵌 ERP 模块升级时会自动接管 {prefix}cerp_* 旧数据，旧表保留不动。
+

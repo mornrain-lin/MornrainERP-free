@@ -88,16 +88,20 @@
    **L2 收费逻辑离岸**——代码本身从未进入公开仓库。
 
 ## 安装收费私有包（付费用户）
-令牌**仅在运行时使用**，不要写入仓库或提交到任何公开位置。
+**模式 A（推荐，无需令牌）**：从私有主库 clone 得到 `packages/mornrain/erp-premium/` 后直接安装：
 ```bash
-# Linux / macOS
-GITHUB_TOKEN=xxxx ./scripts/install-premium.sh
-
-# Windows
-set GITHUB_TOKEN=xxxx && scripts\install-premium.bat
+./scripts/install-premium.sh          # Linux / macOS
+scripts\install-premium.bat           # Windows
 ```
-脚本会：配置私有仓库源 → 用令牌拉取 `mornrain/erp-premium` → `composer require` → 执行迁移。
-详见私有包内 `README.md`。
+脚本以 Composer `path` 仓库装载本地源码，无需任何凭据。
+
+**模式 B（未随包提供 `packages/` 时）**：改用独立私有 VCS 仓库，令牌由运行环境提供，
+只在本次 composer 鉴权时经 `COMPOSER_AUTH` 环境变量传入，**不写入仓库、不进命令行参数、不回显**：
+```bash
+GITHUB_TOKEN=<你的令牌> ./scripts/install-premium.sh
+```
+脚本会：配置 path / VCS 仓库源 → `composer require` → 执行迁移 → 清理配置缓存。
+详见 `packages/mornrain/erp-premium/README.md`（仅私有主库内可见）。
 
 ## 纵深防御（不依赖单一手段）
 - **L1 远程授权服务器**：私钥不出服务器，JWT 短时效 + 可吊销（见 `config/license.php`、`app/Services/LicenseService.php`）。
@@ -108,7 +112,12 @@ set GITHUB_TOKEN=xxxx && scripts\install-premium.bat
 
 ## 当前仓库状态提示
 - 收费模块已从 `app/`（控制器/服务/模型）、`resources/views/`、`database/migrations/` **抽离**至
-  `packages/mornrain/erp-premium/`（被 `.gitignore` 排除，**不会进入公开提交**）。
+  `packages/mornrain/erp-premium/`；免费版发行仓库用 `.gitignore` 排除该目录，
+  **公开提交中不含收费源码**。
 - 公开仓库 `routes/web.php` 已移除 14 个收费路由组，仅保留 `premium.locked` 桩。
 - `app/Support/Premium.php::installed()` 用于判断私有包是否安装，从而切换菜单锁定态。
 - 本文件与 `packages/mornrain/erp-premium/README.md` 需保持同步更新。
+
+> **本仓库身份**：`mornrain-lin/MornrainERP-free` 为免费版发行仓库，
+> `.gitignore` 保留 `/packages/` 排除规则，本仓库不含任何收费模块源码。
+

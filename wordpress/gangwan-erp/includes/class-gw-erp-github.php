@@ -26,7 +26,7 @@ class GW_ERP_Github {
 		$opts = get_option( 'gw_erp_github', array() );
 		return wp_parse_args( is_array( $opts ) ? $opts : array(), array(
 			'owner'  => 'mornrain-lin',
-			'repo'   => 'MornrainERP',
+			'repo'   => 'MornrainERP-free',
 			'branch' => 'main',
 			'token'  => '',
 		) );
@@ -178,7 +178,7 @@ class GW_ERP_Github {
 		if ( ! isset( $res['data']['encoding'] ) || 'base64' !== $res['data']['encoding'] ) {
 			return '';
 		}
-		return base64_decode( $res['data']['content'] ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions
+		return base64_decode( $res['data']['content'] ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions — 仅解码 GitHub Contents API 的 Base64 文件内容，非代码混淆/动态执行
 	}
 
 	/* ---------------- 模块清单 ---------------- */

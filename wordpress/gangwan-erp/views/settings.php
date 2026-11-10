@@ -67,7 +67,7 @@ $wp_roles  = wp_roles()->get_names();
 						<?php if ( $has_tok ) : ?>
 							<p class="description">已在 wp-config.php 中定义 <code>GW_ERP_GITHUB_TOKEN</code>，此项会被忽略。</p>
 						<?php else : ?>
-							<input name="gw_erp_github[token]" type="password" class="regular-text" autocomplete="new-password" placeholder="<?php echo $cfg['token'] ? esc_attr__( '已配置，留空表示不修改', 'gangwan-erp' ) : 'ghp_…（可选）'; ?>">
+							<input name="gw_erp_github[token]" type="password" class="regular-text" autocomplete="new-password" placeholder="<?php echo $cfg['token'] ? esc_attr__( '已配置，留空表示不修改', 'gangwan-erp' ) : '选填，留空表示不修改'; ?>">
 							<p class="description">
 								留空即可（公开仓库匿名可读，60 次/小时）。填写后可提升到 5000 次/小时。
 								Token 仅保存在本站数据库，界面永不回显明文。

@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "mornrain/mornrainerp",
+    "name": "mornrain/mornrainerp-free",
     "type": "project",
     "description": "晨雨ERP — 轻量级跨境电商 ERP：多平台订单归集、物流发货闭环与自动利润核算（订单管理 MVP）。",
     "keywords": ["laravel", "erp", "cross-border", "ecommerce", "order-management", "profit-accounting"],

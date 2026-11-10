@@ -35,5 +35,6 @@ Thumbs.db
 .env.*.bak
 /.workbuddy
 
-# 收费版私有包：不进入公开仓库，付费用户按 PREMIUM.md 从私有仓库安装
+# 收费版私有包：本仓库为【公开免费版发行仓库】，不含任何收费模块源码。
+# 此规则必须保留；付费用户按 PREMIUM.md 从私有主库 / 私有 VCS 安装。
 /packages/

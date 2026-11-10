@@ -9,7 +9,7 @@
 | —（新增） | — | 库存流水、仓库调拨、盘点、客户/供应商、资金账户与收支流水、应收应付、经营报表、CSV 导出 |
 | —（新增） | — | **GitHub 模块中心**：后台直接查看 GitHub 仓库模块清单与最近提交 |
 
-- 版本：1.0.0 ｜ 要求：WordPress 5.9+ / PHP 7.4+
+- 版本：1.0.0 ｜ 要求：WordPress 5.9+ / PHP 7.4+ ｜ 已测试至 WordPress 7.1
 - 纯 PHP + `$wpdb`，**零外部依赖、零 CDN**
 - 金额口径：人民币，`DECIMAL(12,2)`；颜色遵循中国习惯（盈利/涨=红，亏损/跌=绿）
 
@@ -116,3 +116,22 @@ add_filter( 'gw_erp_capability', fn() => 'edit_posts' );
 - 所有 SQL 走 `$wpdb->prepare()`；输出统一 `esc_html()/esc_attr()/esc_url()`；
 - 删除类操作带 JS 二次确认；重置数据需输入 `RESET`；
 - 卸载可用 `GW_ERP_KEEP_DATA` 保留业务数据。
+
+## 九、WordPress.org 目录合规自检
+
+| 规则 | 状态 | 说明 |
+|---|---|---|
+| GPLv2 或更高兼容 | ✅ | 插件头 / readme.txt / `license.txt` 均为 GPL-2.0-or-later |
+| 不得设付费墙、许可门禁、试用或用量配额 | ✅ | 插件全部功能免费，无 `EnsurePlan` / 激活码 / 400 单额度 |
+| 免费版功能完整可用 | ✅ | 商品 / 库存 / 订单 / 采购 / 往来 / 财务 / 报表 / 模块中心全部可用 |
+| 人类可读源码 | ✅ | 纯 PHP + `$wpdb`，无混淆、无加密加载、无远程代码执行 |
+| 转义输出 / 净化输入 / nonce | ✅ | `esc_*`、`sanitize_*`、`wp_unslash`、`check_admin_referer()` |
+| SQL 预处理 | ✅ | 业务 SQL 全部 `$wpdb->prepare()`；卸载建表为硬编码表名 |
+| 前台未经同意的站外链接 | ✅ | 短代码仅输出本站登录 / 后台链接 |
+| 外部服务调用需说明 | ✅ | GitHub REST 只读，readme.txt 明示；缓存 12 小时，可离线回退快照 |
+| 插件 slug 与 Text Domain 一致 | ✅ | `gangwan-erp`（沿用历史目录名，改名会破坏短代码 / 表名 / 主题兼容层） |
+| readme.txt 标准字段 | ✅ | Contributors / Tags(≤5) / Requires at least / Tested up to / Stable tag / License / License URI |
+
+> 注：应用侧（Laravel）的免费版 400 单额度与激活码门禁**只作用于独立应用**，
+> 不随本插件分发；本插件对接的是「已付费的 ERP 实例」而非销售自身功能。
+
