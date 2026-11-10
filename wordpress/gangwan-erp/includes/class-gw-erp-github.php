@@ -26,7 +26,7 @@ class GW_ERP_Github {
 		$opts = get_option( 'gw_erp_github', array() );
 		return wp_parse_args( is_array( $opts ) ? $opts : array(), array(
 			'owner'  => 'mornrain-lin',
-			'repo'   => 'MornrainERP-free',
+			'repo'   => 'MornrainERPfree',
 			'branch' => 'main',
 			'token'  => '',
 		) );

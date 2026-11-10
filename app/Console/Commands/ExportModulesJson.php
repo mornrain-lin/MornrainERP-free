@@ -61,7 +61,7 @@ class ExportModulesJson extends Command
         $payload = [
             'generated_at' => now()->format('Y-m-d H:i:s'),
             'version'      => config('app.version', 'v1.x'),
-            'repo'         => 'mornrain-lin/MornrainERP',
+            'repo'         => 'mornrain-lin/MornrainERPproplus',
             'stats'        => $stats,
             'permissions'  => $permissions,
             'tables'       => $this->countBusinessTables(),

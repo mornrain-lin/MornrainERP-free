@@ -118,6 +118,6 @@ GITHUB_TOKEN=<你的令牌> ./scripts/install-premium.sh
 - `app/Support/Premium.php::installed()` 用于判断私有包是否安装，从而切换菜单锁定态。
 - 本文件与 `packages/mornrain/erp-premium/README.md` 需保持同步更新。
 
-> **本仓库身份**：`mornrain-lin/MornrainERP-free` 为免费版发行仓库，
+> **本仓库身份**：`mornrain-lin/MornrainERPfree` 为免费版发行仓库，
 > `.gitignore` 保留 `/packages/` 排除规则，本仓库不含任何收费模块源码。
 

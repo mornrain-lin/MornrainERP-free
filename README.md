@@ -31,9 +31,9 @@ v1.0 完成企业套件全量收官，路线图 48 个模块全部 `ready`、0 �
 `mornrain/erp-premium` 分发，公开仓库只保留「升级」入口与锁定页。
 边界、授权与纵深防御详见 [PREMIUM.md](PREMIUM.md)。
 
-> **仓库身份**：`mornrain-lin/MornrainERP-free` 为**免费版发行仓库**（MIT），
+> **仓库身份**：`mornrain-lin/MornrainERPfree` 为**免费版发行仓库**（MIT），
 > 只含免费核心与「升级」锁定桩，**不含任何收费模块源码**（`packages/` 已排除）。
-> 收费模块源码位于私有主库 `mornrain-lin/MornrainERP` 的 `packages/` 目录。
+> 收费模块源码位于私有主库 `mornrain-lin/MornrainERPproplus` 的 `packages/` 目录。
 
 
 **多组织核算（免费能力）**：v1.1 起支持三级组织（集团 → 公司 → 部门）、按组织数据隔离，
